@@ -1,4 +1,10 @@
 DoorkeeperApi::Application.routes.draw do
+  namespace :api do
+    namespace :v1 do
+      resources :tasks
+    end
+  end
+    
   use_doorkeeper
   devise_for :users
   get "welcome/index"
